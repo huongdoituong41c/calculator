@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Tiêu đề trang web</title>
+    </head>
+
+    <body>
+        <h2>Viết một chương trình máy tính</h2>
+        <p>Cần biết JS có những biến gì?</p>
+        <label>Nhập 2 số cần tính</label>
+        <br/>
+        <input type="text" id="input_number">
+        <br/>
+        <p>
+            <input type="button" value="AC" id="i_reset" onclick="clear_All()">
+            <input type="button" value="+" id="i_cong" onclick="tinh_Toan('+')">
+            <input type="button" value="-" id="i_tru" onclick="tinh_Toan('-')">
+            <input type="button" value="*" id="i_nhan" onclick="tinh_Toan('*')">
+            <input type="button" value="/" id="i_chia" onclick="tinh_Toan('/')">
+        </p>
+        <br/>
+        <p>
+            <input type="button" value="1" id="i_n_mot" onclick="display_Number(1)">
+            <input type="button" value="2" id="i_n_hai" onclick="display_Number(2)">
+            <input type="button" value="3" id="i_n_ba" onclick="display_Number(3)">
+            <input type="button" value="4" id="i_n_bon" onclick="display_Number(4)">
+        </p>
+        <br/>
+        <p>
+            <input type="button" value="5" id="i_n_nam" onclick="display_Number(5)">
+            <input type="button" value="6" id="i_n_sau" onclick="display_Number(6)">
+            <input type="button" value="7" id="i_n_bay" onclick="display_Number(7)">
+            <input type="button" value="8" id="i_n_tam" onclick="display_Number(8)">
+        </p>
+        <br/>
+        <p>
+            <input type="button" value="9" id="i_n_chin" onclick="display_Number(9)">
+            <input type="button" value="0" id="i_n_khong" onclick="display_Number(0)">
+            <input type="button" value="=" id="i_n_bang" onclick="ket_qua()">
+            
+        </p>
+
+        <script>
+            
+            // B1: click button số đưa nó lên input_number
+            // B2: khi click bao nhiêu số thì hiển thị bất nhiêu số lên textbox
+            function display_Number(number){
+                document.getElementById("input_number").value += number ;
+            }
+        
+            function clear_All(){
+                var clickedNumbersList = document.getElementById("input_number")
+                clickedNumbersList.value = ""
+            }
+
+            function tinh_Toan(phep_tinh)
+            {
+                // Hiển thị tổng trong ô textbox
+                var resultInput = document.getElementById("input_number");
+                resultInput.value += phep_tinh ;
+            }
+            function ket_qua(){
+                var displayValue = document.getElementById("input_number").value;
+                var result = eval(displayValue);
+                document.getElementById("input_number").value = result;
+            }
+        </script>
+    </body>
+</html>
